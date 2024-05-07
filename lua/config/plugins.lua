@@ -41,127 +41,156 @@ local commit = {
 }
 
 local configurations = {
-  { 'navarasu/onedark.nvim', commit = commit.onedark },
+
+  -- 包管理器
   { 'wbthomason/packer.nvim', commit = commit.packer },
+
+  -- 主题
+  { 'navarasu/onedark.nvim', commit = commit.onedark },
+
+  -- 图标拓展
+  {
+    'kyazdani42/nvim-web-devicons',
+    commit = commit.nvim_web_devicons,
+  },
+
+  -- 目录树
   {
     'kyazdani42/nvim-tree.lua',
     commit = commit.nvim_tree,
     requires = { 'kyazdani42/nvim-web-devicons' },
   },
-  {
-    'kyazdani42/nvim-web-devicons',
-    commit = commit.nvim_web_devicons,
-  },
+
+  -- 标签页
   {
     'akinsho/bufferline.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     commit = commit.bufferline,
   },
+
+  -- 状态栏
   {
     'nvim-lualine/lualine.nvim',
     commit = commit.lualine,
   },
-  {
-    'neovim/nvim-lspconfig',
-    commit = commit.nvim_lspconfig
-  },
-  {
-    'williamboman/nvim-lsp-installer',
-    commit = commit.nvim_lsp_installer
-  },
-  {
-    'williamboman/mason.nvim',
-    commit = commit.mason
-  },
+
+  -- 按键提示
   {
     "folke/which-key.nvim",
     commit = commit.which_key,
   },
 
+
+  -- 通用插件
   { "nvim-lua/plenary.nvim", commit = commit.plenary },
 
-  --  { "antoinemadec/FixCursorHold.nvim", commit = commit.fixcursorhold },
+  
+  -- 搜索组件
   {
     "nvim-telescope/telescope.nvim",
     commit = commit.telescope,
   },
 
+  -- 搜索 Telescope projects
+  {
+    "ahmedkhalf/project.nvim",
+    commit = commit.project,
+  },
+
+  -- 高亮
   {
     "nvim-treesitter/nvim-treesitter",
     commit = commit.nvim_treesitter,
     run = ':TSUpdate'
   },
-  {
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    commit = commit.nvim_ts_context_commentstring,
-  },
+
+  -- Git
   {
     "lewis6991/gitsigns.nvim",
     commit = commit.gitsigns,
   },
+
+  -- 注释
   {
     "numToStr/Comment.nvim",
     commit = commit.comment,
   },
+
+  -- ts 注释
   {
-    "ahmedkhalf/project.nvim",
-    commit = commit.project,
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    commit = commit.nvim_ts_context_commentstring,
   },
+
+  -- 弹框
   {
     "akinsho/toggleterm.nvim",
     commit = commit.toggleterm,
   },
 
-  {
-    "hrsh7th/nvim-cmp",
-    commit = commit.nvim_cmp,
---    config = function()
---      if lvim.builtin.cmp then
---        require("lvim.core.cmp").setup()
---      end
---    end,
-    requires = {
-      "L3MON4D3/LuaSnip",
-      "rafamadriz/friendly-snippets",
-    },
-  },
-  {
-    "rafamadriz/friendly-snippets",
-    commit = commit.friendly_snippets,
-  },
-  {
-    "L3MON4D3/LuaSnip",
-    config = function()
-      require("luasnip/loaders/from_vscode").lazy_load()
-    end,
-    commit = commit.luasnip,
-  },
-  {
-    "hrsh7th/cmp-nvim-lsp",
-    commit = commit.cmp_nvim_lsp,
-  },
-  {
-    "saadparwaiz1/cmp_luasnip",
-    commit = commit.cmp_luasnip,
-  },
-  {
-    "hrsh7th/cmp-buffer",
-    commit = commit.cmp_buffer,
-  },
-  {
-    "hrsh7th/cmp-path",
-    commit = commit.cmp_path,
-  },
-
+  -- 自动收括号
   {
     "windwp/nvim-autopairs",
     commit = commit.nvim_autopairs,
   },
 
+  -- markdown
   {
     "ellisonleao/glow.nvim",
     commit = commit.glow,
   },
+
+  -- 代码补全
+  {
+    'neovim/nvim-lspconfig',
+    commit = commit.nvim_lspconfig
+  },
+  {
+    'williamboman/mason.nvim',
+    commit = commit.mason
+  },
+  -- {
+  --   'williamboman/nvim-lsp-installer',
+  --   commit = commit.nvim_lsp_installer
+  -- },
+
+  -- 自动补全
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   commit = commit.nvim_cmp,
+  --   requires = {
+  --     "L3MON4D3/LuaSnip",
+  --     "rafamadriz/friendly-snippets",
+  --   },
+  -- },
+  -- {
+  --   "rafamadriz/friendly-snippets",
+  --   commit = commit.friendly_snippets,
+  -- },
+  -- {
+  --   "L3MON4D3/LuaSnip",
+  --   config = function()
+  --     require("luasnip/loaders/from_vscode").lazy_load()
+  --   end,
+  --   commit = commit.luasnip,
+  -- },
+
+  -- {
+  --   "hrsh7th/cmp-nvim-lsp",
+  --   commit = commit.cmp_nvim_lsp,
+  -- },
+  -- {
+  --   "saadparwaiz1/cmp_luasnip",
+  --   commit = commit.cmp_luasnip,
+  -- },
+  -- {
+  --   "hrsh7th/cmp-buffer",
+  --   commit = commit.cmp_buffer,
+  -- },
+  -- {
+  --   "hrsh7th/cmp-path",
+  --   commit = commit.cmp_path,
+  -- },
 
 }
 
@@ -187,9 +216,9 @@ require('config/plugins/gitsigns')
 require('config/plugins/comment')
 require('config/plugins/project')
 require('config/plugins/toggleterm')
-require("config/plugins/cmp")
--- -- require("luasnip/loaders/from_vscode").lazy_load()
 require("config.plugins.autopairs")
+-- require("config/plugins/cmp")
+-- -- require("luasnip/loaders/from_vscode").lazy_load()
 -- -- Lua
 require('onedark').setup  {
     -- Main options --
