@@ -8,6 +8,18 @@ require("mason").setup({
   }
 })
 
+require("mason-lspconfig").setup {
+  ensure_installed = { "lua_ls", "rust_analyzer"},
+  automatic_installation = false,
+}
+
+-- local lspconfig = require('lspconfig')
+-- lspconfig.rust_analyzer.setup {
+--   -- Server-specific settings. See `:help lspconfig-setup`
+--   settings = {
+--     ['rust-analyzer'] = {},
+--   },
+-- }
 
 -- local lsp_installer = require "nvim-lsp-installer"
 

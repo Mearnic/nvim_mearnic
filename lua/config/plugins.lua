@@ -3,7 +3,9 @@ local commit = {
   lualine = "9208bae98fd5d1ab6145868a8c48bfee53c1a499",
   nvim_lsp_installer = "88e44bbbe2e03523e08f2bd3c9a954675bc438f4",
   mason = "751b1fcbf3d3b783fcf8d48865264a9bcd8f9b10",
+  mason_lspconfig = "a4caa0d083aab56f6cd5acf2d42331b74614a585",
   nvim_lspconfig = "c51096481dc13193991571b7132740d762902355",
+  nvim_lspkind = "1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf",
   nvim_tree = "2dfed89af7724f9e71d2fdbe3cde791a93e9b9e0",
   nvim_web_devicons = "634e26818f2bea9161b7efa76735746838971824",
   packer = "7182f0ddbca2dd6f6723633a84d47f4d26518191",
@@ -13,11 +15,11 @@ local commit = {
   nvim_treesitter = "620cc936ad6b26c59bb2d888b3890bb8d06c50c7",
   nvim_ts_context_commentstring = "097df33c9ef5bbd3828105e4bee99965b758dc3f",
   --    nvim_notify = "15f52efacd169ea26b0f4070451d3ea53f98cd5a",
-  luasnip = "59576a5cf28556a393eedfe38467e998288fc905",
+  luasnip = "de1a287c9cb525ae52bc846e8f6207e5ef1da5ac",
   --    nlsp_settings = "3a3942b5d1da30e3ca0dc431aada3191c5952054",
   --    null_ls = "59067dae4bf2367eb06326e419c23353722ecbec",
   nvim_autopairs = "97e454ce9b1371373105716d196c1017394bc947",
-  nvim_cmp = "d93104244c3834fbd8f3dd01da9729920e0b5fe7",
+  nvim_cmp = "5260e5e8ecadaf13e6b82cf867a909f54e15fd07",
   --    nvim_dap = "c9a58267524f560112ecb6faa36ab2b5bc2f78a3",
   plenary = "563d9f6d083f0514548f2ac4ad1888326d0a1c66",
   --    popup = "b7404d35d5d3548a82149238289fa71f7f6de4ac",
@@ -28,8 +30,9 @@ local commit = {
   toggleterm = "8f2e78d0256eba4896c8514aa150e41e63f7d5b2",
   cmp_buffer = "f83773e2f433a923997c5faad7ea689ec24d1785",
   cmp_luasnip = "d6f837f4e8fe48eeae288e638691b91b97d1737f",
-  cmp_nvim_lsp = "ebdfc204afb87f15ce3d3d3f5df0b8181443b5ba",
-  cmp_path = "c5230cb439df9547294678d0f1c1465ad7989e5f",
+  cmdline_path="d250c63aa13ead745e3a40f61fdd3470efde3923",
+  cmp_nvim_lsp = "39e2eda76828d88b773cc27a3f61d2ad782c922d",
+  cmp_path = "91ff86cd9c29299a64f968ebb45846c485725f23",
   comment = "7365bfe9fc6dc004cc97b8977aa8129999d81bf5",
   --    dapinstall = "24923c3819a450a772bb8f675926d530e829665f",
   --    dashboard_nvim = "d82ddae95fd4dc4c3b7bbe87f09b1840fbf20ecb",
@@ -140,19 +143,30 @@ local configurations = {
     commit = commit.glow,
   },
 
-  -- 代码补全
+  -- -- lsp
+  {
+    'williamboman/mason.nvim',
+    commit = commit.mason
+  },
+  {
+    'williamboman/mason-lspconfig.nvim',
+    commit = commit.mason_lspconfig
+  },
   {
     'neovim/nvim-lspconfig',
     commit = commit.nvim_lspconfig
   },
   {
-    'williamboman/mason.nvim',
-    commit = commit.mason
+    'onsails/lspkind-nvim',
+    commit = commit.nvim_lspkind
   },
   -- {
   --   'williamboman/nvim-lsp-installer',
   --   commit = commit.nvim_lsp_installer
   -- },
+
+  -- 自动补全
+
 
   -- 自动补全
   -- {
@@ -163,34 +177,47 @@ local configurations = {
   --     "rafamadriz/friendly-snippets",
   --   },
   -- },
-  -- {
-  --   "rafamadriz/friendly-snippets",
-  --   commit = commit.friendly_snippets,
-  -- },
-  -- {
-  --   "L3MON4D3/LuaSnip",
-  --   config = function()
-  --     require("luasnip/loaders/from_vscode").lazy_load()
-  --   end,
-  --   commit = commit.luasnip,
-  -- },
+  {
+    "rafamadriz/friendly-snippets",
+    commit = commit.friendly_snippets,
+  },
+  {
+    "saadparwaiz1/cmp_luasnip",
+    commit = commit.cmp_luasnip,
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    config = function()
+      require("luasnip/loaders/from_vscode").lazy_load()
+    end,
+    commit = commit.luasnip,
+  },
 
-  -- {
-  --   "hrsh7th/cmp-nvim-lsp",
-  --   commit = commit.cmp_nvim_lsp,
-  -- },
-  -- {
-  --   "saadparwaiz1/cmp_luasnip",
-  --   commit = commit.cmp_luasnip,
-  -- },
-  -- {
-  --   "hrsh7th/cmp-buffer",
-  --   commit = commit.cmp_buffer,
-  -- },
-  -- {
-  --   "hrsh7th/cmp-path",
-  --   commit = commit.cmp_path,
-  -- },
+
+  {
+    "hrsh7th/cmp-nvim-lsp",
+    commit = commit.cmp_nvim_lsp,
+  },
+  {
+    "hrsh7th/cmp-buffer",
+    commit = commit.cmp_buffer,
+  },
+  {
+    "hrsh7th/cmp-path",
+    commit = commit.cmp_path,
+  },
+  {
+    "hrsh7th/cmp-cmdline",
+    commit = commit.cmdline_path,
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    commit = commit.nvim_cmp,
+    requires = {
+      "L3MON4D3/LuaSnip",
+      "rafamadriz/friendly-snippets",
+    },
+  },
 
 }
 
@@ -217,7 +244,7 @@ require('config/plugins/comment')
 require('config/plugins/project')
 require('config/plugins/toggleterm')
 require("config.plugins.autopairs")
--- require("config/plugins/cmp")
+require("config/plugins/cmp")
 -- -- require("luasnip/loaders/from_vscode").lazy_load()
 -- -- Lua
 require('onedark').setup  {
