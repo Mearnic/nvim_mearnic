@@ -161,10 +161,10 @@ local configurations = {
     'onsails/lspkind-nvim',
     commit = commit.nvim_lspkind
   },
-  -- {
-  --   'mfussenegger/nvim-jdtls',
-  --   commit = commit.nvim_jdtls
-  -- },
+  {
+    'mfussenegger/nvim-jdtls',
+    commit = commit.nvim_jdtls
+  },
   
   -- {
   --   'williamboman/nvim-lsp-installer',
