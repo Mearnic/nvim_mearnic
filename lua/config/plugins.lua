@@ -6,6 +6,7 @@ local commit = {
   mason_lspconfig = "a4caa0d083aab56f6cd5acf2d42331b74614a585",
   nvim_lspconfig = "c51096481dc13193991571b7132740d762902355",
   nvim_lspkind = "1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf",
+  nvim_jdtls = "29255ea26dfb51ef0213f7572bff410f1afb002d",
   nvim_tree = "2dfed89af7724f9e71d2fdbe3cde791a93e9b9e0",
   nvim_web_devicons = "634e26818f2bea9161b7efa76735746838971824",
   packer = "7182f0ddbca2dd6f6723633a84d47f4d26518191",
@@ -160,6 +161,11 @@ local configurations = {
     'onsails/lspkind-nvim',
     commit = commit.nvim_lspkind
   },
+  -- {
+  --   'mfussenegger/nvim-jdtls',
+  --   commit = commit.nvim_jdtls
+  -- },
+  
   -- {
   --   'williamboman/nvim-lsp-installer',
   --   commit = commit.nvim_lsp_installer
