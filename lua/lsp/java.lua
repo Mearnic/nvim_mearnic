@@ -38,7 +38,7 @@ local config = {
         '--add-opens', 'java.base/java.util=ALL-UNNAMED',
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
         "-javaagent:/opt/java/lombok.jar",
-        "-Xbootclasspath/a:/opt/java/lombok.jar",
+        -- "-Xbootclasspath/a:/opt/java/lombok.jar",
         '-jar', '/opt/java/jdtls/plugins/org.eclipse.equinox.launcher_1.6.800.v20240330-1250.jar',
         '-configuration', '/opt/java/jdtls/config_linux',
         '-data', workspace_dir,
