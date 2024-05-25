@@ -25,6 +25,7 @@ local commit = {
   plenary = "563d9f6d083f0514548f2ac4ad1888326d0a1c66",
   --    popup = "b7404d35d5d3548a82149238289fa71f7f6de4ac",
   project = "cef52b8da07648b750d7f1e8fb93f12cb9482988",
+  scrollbar = "35f99d559041c7c0eff3a41f9093581ceea534e8",
   --    structlog = "6f1403a192791ff1fa7ac845a73de9e860f781f1",
   telescope = "0011b1148d3975600f5a9f0be8058cdaac4e30d9",
   telescope_fzf_native = "b8662b076175e75e6497c59f3e2799b879d7b954",
@@ -100,6 +101,14 @@ local configurations = {
     "ahmedkhalf/project.nvim",
     commit = commit.project,
   },
+
+  
+  {
+    "petertriho/nvim-scrollbar",
+    commit = commit.scrollbar,
+  },
+
+
 
   -- 高亮
   {
@@ -244,6 +253,7 @@ require('config/plugins/bufferline')
 require('config/plugins/lualine')
 require('config/plugins/whichkey')
 require('config/plugins/telescope')
+require('config/plugins/scollbar')
 require('config/plugins/treesitter')
 require('config/plugins/gitsigns')
 require('config/plugins/comment')
