@@ -67,8 +67,8 @@ require'nvim-tree'.setup {
   diagnostics = {
     enable = true,
     icons = {
-      error = " ",
-      warning = " ",
+      error = " ",
+      warning = " ",
       info = " ",
       hint = " "
     },

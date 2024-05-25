@@ -7,8 +7,8 @@ end
 local function diagnostics_indicator(_, _, diagnostics)
   local result = {}
   local symbols = {
-    error = "",
-    warning = " ",
+    error = " ",
+    warning = " ",
     info = " ",
     hint = " "
   }

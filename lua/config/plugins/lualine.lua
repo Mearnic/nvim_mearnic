@@ -26,8 +26,8 @@ lualine.setup {
         sources = {"nvim_lsp"},
         --      symbols = {error = " ", warn = " ", info = " ", hint = ""}
         symbols = {
-          error = " ",
-          warning = " ",
+          warn = " ",
+          error = " ",
           info = " ",
           hint = " "
         }
@@ -79,8 +79,8 @@ lualine.setup {
         "diagnostics",
         sources = {"nvim_lsp"},
         symbols = {
-          error = " ",
-          warning = " ",
+          warning = " ",
+          error = " ",
           info = " ",
           hint = " "
         }
