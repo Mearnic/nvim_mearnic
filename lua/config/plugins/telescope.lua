@@ -41,3 +41,20 @@ vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin'
 vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true, silent = true})
 
+
+
+
+
+vim.api.nvim_set_keymap('n', 'sd', '<Cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'si', '<Cmd>lua vim.lsp.buf.implementation()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>vws', '<Cmd>lua vim.lsp.buf.workspace_symbol()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>vd', '<Cmd>lua vim.diagnostic.open_float()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '[d', '<Cmd>lua vim.diagnostic.goto_next()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', ']d', '<Cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>vca', '<Cmd>lua vim.lsp.buf.code_action()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>vrr', '<Cmd>lua vim.lsp.buf.references()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>vrn', '<Cmd>lua vim.lsp.buf.rename()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<C-h>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', {noremap = true, silent = true})
+
