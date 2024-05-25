@@ -48,11 +48,11 @@ require("bufferline").setup {
     custom_filter = custom_filter,
     offsets = {
       {
-        filetype = "NvimTree",
-        text_align = "center",
-        -- text = "  NvimTree  ",
-        text = "  Mearnic ",
-        highlight = "DiffText",
+        -- filetype = "NvimTree",
+        -- text_align = "center",
+        -- -- text = "  NvimTree  ",
+        -- text = "  Mearnic ",
+        -- highlight = "DiffText",
         padding = 1,
       }
     },
