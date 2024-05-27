@@ -67,7 +67,7 @@ local lazygit = Terminal:new({
   },
   on_open = function(term)
     vim.cmd("startinsert!")
-    -- vim.api.nvim_set_keymap("n", "q", "<cmd>close<CR>", {noremap = true, silent = true})
+    vim.api.nvim_set_keymap("t", "<C-q>", "q", {noremap = true, silent = true})
     open_flag = true
     init_flag = true
   end,
