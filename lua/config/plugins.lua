@@ -8,6 +8,7 @@ local commit = {
   nvim_lspkind = "1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf",
   nvim_jdtls = "29255ea26dfb51ef0213f7572bff410f1afb002d",
   nvim_tree = "2dfed89af7724f9e71d2fdbe3cde791a93e9b9e0",
+  marks = "74e8d01b2a2131b6e46354cffc553aa7f81bcf5b",
   nvim_web_devicons = "634e26818f2bea9161b7efa76735746838971824",
   packer = "7182f0ddbca2dd6f6723633a84d47f4d26518191",
   which_key = "28d2bd129575b5e9ebddd88506601290bb2bb221",
@@ -71,6 +72,12 @@ local configurations = {
     'akinsho/bufferline.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     commit = commit.bufferline,
+  },
+
+  -- Marks
+  {
+    'chentoast/marks.nvim',
+    commit = commit.marks,
   },
 
   -- 状态栏
@@ -251,6 +258,7 @@ require('config/plugins/nvimtree')
 -- --require('config/plugins/nvimtree').buffer_distinct()
 require('config/plugins/bufferline')
 require('config/plugins/lualine')
+require('config/plugins/marks')
 require('config/plugins/whichkey')
 require('config/plugins/telescope')
 require('config/plugins/scollbar')
