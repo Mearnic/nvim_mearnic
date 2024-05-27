@@ -7,20 +7,7 @@ local function on_attach(client, bufnr)
     require('jdtls').setup_dap_main_class_configs()
     require('jdtls.ui').pick_one_async()
     require('jdtls.setup').add_lombok_jars()
-
     local opts = { noremap=true, silent=true }
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>vws', '<Cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>vd', '<Cmd>lua vim.diagnostic.open_float()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', '<Cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d', '<Cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>vca', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>vrr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>vrn', '<Cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'i', '<C-h>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 end
 
 local home = os.getenv("HOME")
@@ -46,8 +33,6 @@ local config = {
     },
     root_dir = nvim_lsp.util.root_pattern('.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle'),
     on_attach = on_attach,
-
-
     settings = {
         java = {
             eclipse = {
@@ -111,20 +96,3 @@ local config = {
 
 -- jdtls.start_or_attach(config)
 nvim_lsp.jdtls.setup(config)
-
-
-
-
-
-
-vim.api.nvim_set_keymap('n', 'sd', '<Cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'si', '<Cmd>lua vim.lsp.buf.implementation()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'sk', '<Cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'ss', '<Cmd>lua vim.lsp.buf.workspace_symbol()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'svd', '<Cmd>lua vim.diagnostic.open_float()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'sn', '<Cmd>lua vim.diagnostic.goto_next()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'sN', '<Cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'sa', '<Cmd>lua vim.lsp.buf.code_action()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'sr', '<Cmd>lua vim.lsp.buf.references()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'scn', '<Cmd>lua vim.lsp.buf.rename()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'sh', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', {noremap = true, silent = true})
