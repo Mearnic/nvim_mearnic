@@ -64,6 +64,12 @@ local defaults = {
     ['<A-r>']= ':NvimTreeFindFile<CR>',
     ['®']= ':NvimTreeFindFile<CR>',
     ['<LEADER>v']= ':Glow<CR><C-w>|<C-w>_',
+
+
+
+    ['<C-[>']=':bp<CR>',
+    ['<C-]>']=':bn<CR>',
+    ['<C-TAB>']=':bn<CR>',
   },
 
   insert_mode = {

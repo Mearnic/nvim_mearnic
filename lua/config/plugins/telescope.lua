@@ -49,6 +49,7 @@ local builtin = require('telescope.builtin')
 vim.api.nvim_set_keymap("n", "<C-f>", "<cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<C-/>", "<cmd>lua require('telescope.builtin').live_grep()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<C-e>", "<cmd>lua require('telescope.builtin').buffers()<CR><ESC>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<C-m>", "<cmd>lua require('telescope.builtin').marks()<CR><ESC>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<F12>", "<cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true, silent = true})
 
 
