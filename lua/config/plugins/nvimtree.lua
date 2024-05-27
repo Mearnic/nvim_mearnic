@@ -16,6 +16,10 @@ function telescope_live_grep(_)
   start_telescope "live_grep"
 end
 
+function telescope_buffers(_)
+  start_telescope "buffers"
+end
+
 function start_telescope(telescope_mode)
   local node = require("nvim-tree.lib").get_node_at_cursor()
   local abspath = node.link_to or node.absolute_path
@@ -66,6 +70,7 @@ local function my_on_attach(bufnr)
   vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
 
   -- vim.keymap.set('n', '<C-f>', api.live_filter.start, opts('Live Filter: Start'))
+  vim.keymap.set('n', '<C-e>', telescope_buffers, opts('Telescope Buffers'))
   vim.keymap.set('n', '<C-f>', telescope_find_files, opts('Telescope Find File'))
   vim.keymap.set('n', '<C-/>', telescope_live_grep, opts('Telescope Live Grep'))
 end
