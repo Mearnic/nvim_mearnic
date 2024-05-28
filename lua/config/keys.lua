@@ -44,6 +44,9 @@ local defaults = {
     ['n']='nzz',
     ['N']='Nzz',
 
+    ['<LEADER>vs']=':vs<CR>',
+    ['<LEADER>sv']=':sp<CR>',
+
     ['<']='<<',
     ['>']='>>',
 
