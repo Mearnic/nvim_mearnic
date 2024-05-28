@@ -29,14 +29,14 @@ vim.o.wrap=false
 -- 开启tab转空格
 vim.o.expandtab = true
 -- tab为几个空格
-vim.o.tabstop = 2
+vim.o.tabstop = 4
 -- 格式化tab为空格的个数
-vim.o.shiftwidth = 2
+vim.o.shiftwidth = 4
 -- 几个空格为tab
-vim.o.softtabstop = 2
+vim.o.softtabstop = 4
 -- >> << 长度
-vim.o.shiftwidth = 2
-vim.bo.shiftwidth = 2
+vim.o.shiftwidth = 4
+vim.bo.shiftwidth = 4
 
 
 -- 允许鼠标操作

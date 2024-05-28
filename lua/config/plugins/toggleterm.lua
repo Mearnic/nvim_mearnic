@@ -68,10 +68,12 @@ local lazygit = Terminal:new({
   on_open = function(term)
     vim.cmd("startinsert!")
     vim.api.nvim_set_keymap("t", "<C-q>", "q", {noremap = true, silent = true})
+    vim.api.nvim_set_keymap("t", "<ESC>", "q", {noremap = true, silent = true})
     open_flag = true
     init_flag = true
   end,
   on_close = function(term)
+    vim.api.nvim_set_keymap("t", "<ESC>", "<ESC>", {noremap = true, silent = true})
     init_flag = false
     open_flag = false
   end,

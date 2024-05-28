@@ -44,8 +44,6 @@ require('telescope').setup{
 --require('telescope').load_extension('fzf')
 require('telescope').load_extension('projects')
 
-local builtin = require('telescope.builtin')
-
 vim.api.nvim_set_keymap("n", "<C-f>", "<cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<C-/>", "<cmd>lua require('telescope.builtin').live_grep()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<C-e>", "<cmd>lua require('telescope.builtin').buffers()<CR><ESC>", {noremap = true, silent = true})
